@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domotik.M | Domotique & Contrôle Local</title>
+    <!-- Icône dans l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="logo.png">
     <!-- Tailwind CSS pour le design moderne style Lovable -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
@@ -17,8 +19,9 @@
     <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
-                <div class="w-8 h-8 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center text-sm shadow-md shadow-blue-500/10">
-                    <i class="fa-solid fa-house-laptop text-white"></i>
+                <!-- Remplacement par ton logo image -->
+                <div class="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center bg-[#0B0F19]">
+                    <img src="logo.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
                 </div>
                 <span>Domotik<span class="text-blue-500">.M</span></span>
             </div>
@@ -35,7 +38,7 @@
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
         <div class="max-w-3xl mx-auto space-y-6 relative z-10">
             <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
-                <span>✨ Domotique de nouvelle génération</span>
+                <span>Domotique de nouvelle génération</span>
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Une maison intelligente,<br>
@@ -103,7 +106,6 @@
                 <p class="text-xs text-slate-400">Votre message me sera envoyé directement en tâche de fond.</p>
             </div>
 
-            <!-- Ajout de novalidate pour bloquer les bulles d'erreur par défaut -->
             <form id="domoForm" novalidate class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Prénom et Nom</label>
@@ -201,7 +203,6 @@
             }
         }
 
-        // Fonction utilitaire pour valider visuellement les champs
         function validerChamp(id, condition) {
             const el = document.getElementById(id);
             const err = document.getElementById('error-' + id);
@@ -226,15 +227,12 @@
             const inputEmail = document.getElementById('clientEmail').value.trim();
             const inputMessage = document.getElementById('clientMessage').value.trim();
             
-            // Regex simple pour l'adresse e-mail
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            // Validation personnalisée des champs
             const isNameValid = validerChamp('clientName', inputName === "");
             const isEmailValid = validerChamp('clientEmail', !emailRegex.test(inputEmail));
             const isMessageValid = validerChamp('clientMessage', inputMessage === "");
 
-            // Si un des champs est invalide, on arrête l'envoi
             if (!isNameValid || !isEmailValid || !isMessageValid) {
                 return;
             }
@@ -247,7 +245,6 @@
             btnText.innerText = "Envoi en cours...";
             status.classList.add('hidden');
 
-            // Collecte des cases cochées
             const checkboxes = document.querySelectorAll('input[name="appareils"]:checked');
             let appareilsPossedes = [];
             checkboxes.forEach((cb) => {
