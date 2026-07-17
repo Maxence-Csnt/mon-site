@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Script EmailJS officiel pour l'envoi direct sans ouverture d'app -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
@@ -30,9 +32,7 @@
 
     <!-- 🏠 Section Héro -->
     <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center relative overflow-hidden">
-        <!-- Effet de lumière en arrière-plan -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
-        
         <div class="max-w-3xl mx-auto space-y-6 relative z-10">
             <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
                 <span>✨ Domotique de nouvelle génération</span>
@@ -60,7 +60,6 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-6">
-            <!-- Service 1 -->
             <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
                 <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 text-base group-hover:bg-blue-500 group-hover:text-white transition-all">
                     <i class="fa-solid fa-server"></i>
@@ -68,7 +67,6 @@
                 <h3 class="text-base font-semibold text-white">Serveurs Home Assistant</h3>
                 <p class="text-slate-400 text-xs leading-relaxed font-normal">Déploiement local sur matériel dédié (NUC/Raspberry). Centralisation complète de vos protocoles Zigbee, Z-Wave et IP.</p>
             </div>
-            <!-- Service 2 -->
             <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
                 <div class="w-10 h-10 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 text-base group-hover:bg-indigo-500 group-hover:text-white transition-all">
                     <i class="fa-solid fa-bolt"></i>
@@ -76,7 +74,6 @@
                 <h3 class="text-base font-semibold text-white">Gestion Énergétique</h3>
                 <p class="text-slate-400 text-xs leading-relaxed font-normal">Suivi de consommation global et par appareil. Automatisation intelligente du chauffage et délestage automatique en temps réel.</p>
             </div>
-            <!-- Service 3 -->
             <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
                 <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 text-base group-hover:bg-emerald-500 group-hover:text-white transition-all">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -93,31 +90,38 @@
         <div class="max-w-2xl mx-auto space-y-5 relative z-10">
             <h2 class="text-2xl font-bold text-white tracking-tight">Le manifeste du Contrôle Local</h2>
             <p class="text-sm sm:text-base text-slate-400 leading-relaxed font-normal">
-                Aucun abonnement caché. Aucune panne liée à une coupure internet externe. Vos données restent physiques, stockées de manière chiffrée chez vous. C'est l'assurance d'une maison qui réagit instantanément à la milliseconde près.
+                Aucun abonnement caché. Aucune panne liée à une coupure internet externe. Vos données restent physiques, stockées de manière chiffrée chez vous.
             </p>
         </div>
     </section>
 
-    <!-- 📨 Section Formulaire Interactif (Style Lovable Card) -->
+    <!-- 📨 Section Formulaire Intégralement Automatisé -->
     <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
         <div class="max-w-md mx-auto space-y-8">
             <div class="text-center space-y-2">
                 <h2 class="text-2xl font-bold text-white tracking-tight">Configurez votre projet</h2>
-                <p class="text-xs text-slate-400">Décrivez votre besoin ci-dessous pour générer l'e-mail direct.</p>
+                <p class="text-xs text-slate-400">Votre message me sera envoyé directement en tâche de fond.</p>
             </div>
 
-            <!-- Formulaire style Lovable -->
             <form id="domoForm" class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
                 <div class="space-y-2">
                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Nom</label>
                     <input type="text" id="clientName" placeholder="ex: Jean Dupont" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
                 <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Projet</label>
-                    <textarea id="clientMessage" rows="5" required placeholder="ex: Bonjour, je souhaite centraliser mes volets roulants Somfy et piloter mon chauffage connecté avec une box Home Assistant..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Adresse E-mail</label>
+                    <input type="email" id="clientEmail" placeholder="ex: jean.dupont@gmail.com" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
-                    <span>Générer et envoyer mon e-mail</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Projet</label>
+                    <textarea id="clientMessage" rows="5" required placeholder="ex: Bonjour, je souhaite installer un serveur Home Assistant..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                </div>
+                
+                <!-- Zone de notification de succès ou d'erreur -->
+                <div id="formStatus" class="text-xs text-center hidden py-2 rounded-xl"></div>
+
+                <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
+                    <span id="btnText">Envoyer ma demande</span> <i class="fa-solid fa-paper-plane text-xs"></i>
                 </button>
             </form>
         </div>
@@ -126,24 +130,50 @@
     <!-- 📝 Footer -->
     <footer class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
         <p>&copy; 2026 DomotiquePro. Tous droits réservés.</p>
-        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Statut : Réseau privé & Sécurisé 🚀</p>
+        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Statut : Envoi direct sécurisé 🚀</p>
     </footer>
 
-    <!-- ⚙️ Script Mailto Dynamique -->
+    <!-- ⚙️ Script EmailJS Automatique -->
     <script>
+        // ⚠️ REMPLACE CETTE CLÉ par ton "Public Key" EmailJS
+        emailjs.init("VOTRE_PUBLIC_KEY");
+
         document.getElementById('domoForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
             
-            const name = document.getElementById('clientName').value;
-            const message = document.getElementById('clientMessage').value;
-            
-            const emailDest = "domotik.m@gmail.com";
-            const subject = encodeURIComponent("[Projet Domotique] Demande de " + name);
-            
-            const body = encodeURIComponent("Bonjour,\n\nVoici les détails de mon projet domotique :\n\n" + message + "\n\nCordialement,\n" + name);
-            
-            // Ouvre la messagerie par défaut de l'utilisateur avec son adresse comme expéditeur
-            window.location.href = "mailto:" + emailDest + "?subject=" + subject + "&body=" + body;
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const status = document.getElementById('formStatus');
+
+            // Animation de chargement
+            btn.disabled = true;
+            btnText.innerText = "Envoi en cours...";
+            status.classList.add('hidden');
+
+            // Récupération des données du formulaire
+            const params = {
+                from_name: document.getElementById('clientName').value,
+                reply_to: document.getElementById('clientEmail').value, // L'adresse mail entrée par le client
+                message: document.getElementById('clientMessage').value
+            };
+
+            // ⚠️ REMPLACE "YOUR_SERVICE_ID" et "YOUR_TEMPLATE_ID" par tes identifiants EmailJS
+            emailjs.send("service_mcwucwj", "template_n83ijmk", params)
+                .then(function() {
+                    // Succès
+                    btnText.innerText = "Envoyer ma demande";
+                    btn.disabled = false;
+                    status.innerText = "✨ Message envoyé avec succès ! Je vous réponds rapidement.";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
+                    document.getElementById('domoForm').reset();
+                }, function(error) {
+                    // Échec
+                    btnText.innerText = "Envoyer ma demande";
+                    btn.disabled = false;
+                    status.innerText = "❌ Une erreur est survenue. Veuillez réessayer.";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                    console.log('Erreur EmailJS:', error);
+                });
         });
     </script>
 
