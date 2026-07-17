@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domotik.M | Domotique & Contrôle Local</title>
-    <!-- Icône dans l'onglet du navigateur -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- 🌐 Icône épurée dans l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <!-- Tailwind CSS pour le design moderne style Lovable -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
@@ -17,11 +17,11 @@
 
     <!-- 🌐 Barre de navigation -->
     <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
-                <!-- Remplacement par ton logo image -->
-                <div class="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center bg-[#0B0F19]">
-                    <img src="favicon.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
+                <!-- 🎨 Intégration de ton tout nouveau logo -->
+                <div class="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center bg-[#0B0F19]">
+                    <img src="logo.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
                 </div>
                 <span>Domotik<span class="text-blue-500">.M</span></span>
             </div>
@@ -132,29 +132,58 @@
                     </div>
                 </div>
 
-                <!-- 💡 Appareils domotiques possédés -->
+                <!-- 💡 Appareils domotiques possédés (VERSION STYLÉE) -->
                 <div class="space-y-2.5">
                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Appareils domotiques possédés</label>
-                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-300">
-                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
-                            <input type="checkbox" name="appareils" value="Éclairage" class="accent-blue-500 h-4 w-4">
-                            <span>Éclairage connecté / Prise</span>
+                    <div class="grid grid-cols-2 gap-2.5 text-xs">
+                        
+                        <!-- Case 1 -->
+                        <label class="relative flex flex-col justify-between p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
+                            <input type="checkbox" name="appareils" value="Éclairage" class="sr-only peer">
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Éclairage connecté / Prise</span>
+                                <div class="w-4 h-4 rounded border border-slate-700 flex items-center justify-center bg-[#0B0F19] text-[10px] text-transparent peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all shrink-0 ml-2">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
                         </label>
-                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
-                            <input type="checkbox" name="appareils" value="Volets" class="accent-blue-500 h-4 w-4">
-                            <span>Volets roulants</span>
+
+                        <!-- Case 2 -->
+                        <label class="relative flex flex-col justify-between p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
+                            <input type="checkbox" name="appareils" value="Volets" class="sr-only peer">
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Volets roulants</span>
+                                <div class="w-4 h-4 rounded border border-slate-700 flex items-center justify-center bg-[#0B0F19] text-[10px] text-transparent peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all shrink-0 ml-2">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
                         </label>
-                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
-                            <input type="checkbox" name="appareils" value="Chauffage" class="accent-blue-500 h-4 w-4">
-                            <span>Thermostat / PAC</span>
+
+                        <!-- Case 3 -->
+                        <label class="relative flex flex-col justify-between p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
+                            <input type="checkbox" name="appareils" value="Chauffage" class="sr-only peer">
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Thermostat / PAC</span>
+                                <div class="w-4 h-4 rounded border border-slate-700 flex items-center justify-center bg-[#0B0F19] text-[10px] text-transparent peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all shrink-0 ml-2">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
                         </label>
-                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
-                            <input type="checkbox" name="appareils" value="Caméras" class="accent-blue-500 h-4 w-4">
-                            <span>Caméras / Alarme</span>
+
+                        <!-- Case 4 -->
+                        <label class="relative flex flex-col justify-between p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
+                            <input type="checkbox" name="appareils" value="Caméras" class="sr-only peer">
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Caméras / Alarme</span>
+                                <div class="w-4 h-4 rounded border border-slate-700 flex items-center justify-center bg-[#0B0F19] text-[10px] text-transparent peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all shrink-0 ml-2">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
                         </label>
+
                     </div>
                     <!-- Champ Autre -->
-                    <div class="pt-1">
+                    <div class="pt-1.5">
                         <input type="text" id="appareilsAutre" placeholder="Autre(s) appareil(s)..." class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19] border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-all font-normal">
                     </div>
                 </div>
