@@ -1,0 +1,27 @@
+{
+  "name": "mon-site",
+  "version": "1.0.0",
+  "description": "Domotik.M - Architecture Domotique & Contrôle Local",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxence-Csnt/mon-site.git"
+  },
+  "keywords": [
+    "domotique",
+    "home-automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxence-Csnt/mon-site/issues"
+  },
+  "homepage": "https://github.com/Maxence-Csnt/mon-site#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
