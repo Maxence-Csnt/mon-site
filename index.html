@@ -83,51 +83,26 @@
         </div>
     </section>
 
-    <!-- 🔒 Section Philosophie -->
-    <section id="philosophie" class="py-20 max-w-4xl mx-auto px-4 text-center space-y-6">
-        <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold">
-            <i class="fa-solid fa-lock"></i>
-            <span>100% Souverain & Privé</span>
-        </div>
-        <h2 class="text-3xl font-bold text-slate-900">Pourquoi travailler avec moi ?</h2>
-        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Je privilégie les technologies **open-source** et les protocoles locaux (Zigbee, Z-Wave). Vos scénarios s'exécutent instantanément, même si votre connexion internet est coupée, et aucune donnée ne quitte votre domicile.
-        </p>
-    </section>
-
-    <!-- 📨 Section Contact / Formulaire -->
-    <section id="contact" class="bg-slate-900 text-white py-20">
-        <div class="max-w-xl mx-auto px-4">
-            <div class="text-center mb-12 space-y-4">
-                <h2 class="text-3xl font-bold">Un projet de maison connectée ?</h2>
-                <p class="text-slate-400">Demandez votre étude personnalisée et recevez un devis gratuit sous 48h.</p>
-            </div>
-
-            <!-- Remplace "TON_EMAIL" par l'ID que te donnera Formspree pour recevoir les e-mails -->
-            <form action="https://formspree.io/f/TON_EMAIL" method="POST" class="space-y-6 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">Nom / Entreprise</label>
-                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">Adresse e-mail</label>
-                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">Votre besoin</label>
-                    <textarea name="message" rows="4" required placeholder="Ex: Je souhaite automatiser mes volets roulants et installer Home Assistant..." class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-                    Envoyer ma demande <i class="fa-solid fa-paper-plane ml-2"></i>
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- 📝 Footer -->
-    <footer class="bg-slate-950 text-slate-500 text-center py-8 text-sm border-t border-slate-900">
-        <p>&copy; 2026 DomotiquePro. Tous droits réservés. Propulsé par GitHub Pages 🚀</p>
-    </footer>
-
-</body>
-</html>
+<!-- Formulaire de contact configuré pour domotik.m@gmail.com -->
+<form action="https://formsubmit.co/domotik.m@gmail.com" method="POST" class="space-y-6 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
+    
+    <!-- Redirection automatique après l'envoi (optionnel) -->
+    <input type="hidden" name="_next" value="https://domotique.pro.fr">
+    
+    <div>
+        <label class="block text-sm font-medium text-slate-300 mb-2">Nom / Entreprise</label>
+        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-slate-300 mb-2">Votre adresse e-mail (pour vous répondre)</label>
+        <!-- L'attribut name="email" permet à FormSubmit de définir le client comme l'expéditeur de ta réponse -->
+        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-slate-300 mb-2">Votre besoin</label>
+        <textarea name="message" rows="4" required placeholder="Ex: Je souhaite automatiser mes volets roulants et installer Home Assistant..." class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
+        Envoyer ma demande <i class="fa-solid fa-paper-plane ml-2"></i>
+    </button>
+</form>
