@@ -8,12 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Script EmailJS officiel pour l'envoi direct sans ouverture d'app -->
+    <!-- Script EmailJS officiel v4 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
-    <!-- 🌐 Barre de navigation style Lovable/SaaS -->
+    <!-- 🌐 Barre de navigation -->
     <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
@@ -95,7 +95,7 @@
         </div>
     </section>
 
-    <!-- 📨 Section Formulaire Intégralement Automatisé -->
+    <!-- 📨 Section Formulaire -->
     <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
         <div class="max-w-md mx-auto space-y-8">
             <div class="text-center space-y-2">
@@ -112,12 +112,49 @@
                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Adresse E-mail</label>
                     <input type="email" id="clientEmail" placeholder="ex: jean.dupont@gmail.com" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
+
+                <!-- 🏠 Type de logement (Sélecteur de type bouton) -->
                 <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Projet</label>
-                    <textarea id="clientMessage" rows="5" required placeholder="ex: Bonjour, je souhaite installer un serveur Home Assistant..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Type de logement</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" id="btnMaison" onclick="selectLogement('Maison')" class="px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10">
+                            <i class="fa-solid fa-house mr-2 text-xs"></i> Maison
+                        </button>
+                        <button type="button" id="btnAppart" onclick="selectLogement('Appartement')" class="px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700">
+                            <i class="fa-solid fa-building mr-2 text-xs"></i> Appartement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 💡 Appareils domotiques possédés -->
+                <div class="space-y-2.5">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Appareils domotiques possédés</label>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-slate-300">
+                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
+                            <input type="checkbox" name="appareils" value="Éclairage" class="accent-blue-500 h-4 w-4">
+                            <span>Éclairage connecté</span>
+                        </label>
+                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
+                            <input type="checkbox" name="appareils" value="Volets" class="accent-blue-500 h-4 w-4">
+                            <span>Volets roulants</span>
+                        </label>
+                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
+                            <input type="checkbox" name="appareils" value="Chauffage" class="accent-blue-500 h-4 w-4">
+                            <span>Thermostat / PAC</span>
+                        </label>
+                        <label class="flex items-center space-x-2.5 p-2.5 rounded-lg bg-[#0B0F19]/50 border border-slate-800/60 cursor-pointer hover:border-slate-800 transition-colors">
+                            <input type="checkbox" name="appareils" value="Caméras" class="accent-blue-500 h-4 w-4">
+                            <span>Caméras / Alarme</span>
+                        </label>
+                    </div>
                 </div>
                 
-                <!-- Zone de notification de succès ou d'erreur -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Détails de votre projet</label>
+                    <textarea id="clientMessage" rows="4" required placeholder="ex: Bonjour, je souhaite centraliser mes volets et mon chauffage..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                </div>
+                
+                <!-- Zone de notification -->
                 <div id="formStatus" class="text-xs text-center hidden py-2 rounded-xl"></div>
 
                 <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
@@ -133,11 +170,31 @@
         <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Statut : Envoi direct sécurisé 🚀</p>
     </footer>
 
-    <!-- ⚙️ Script EmailJS Automatique -->
+    <!-- ⚙️ Script JavaScript & EmailJS -->
     <script>
-        // ⚠️ REMPLACE CETTE CLÉ par ton "Public Key" EmailJS
-        emailjs.init("nGU9Kr5gjTAvKzZ0L");
+        // Initialisation EmailJS v4
+        emailjs.init({
+          publicKey: "nGU9Kr5gjTAvKzZ0L",
+        });
 
+        // Gestion du choix de type de logement
+        let typeLogementSelectionne = "Maison";
+
+        function selectLogement(type) {
+            typeLogementSelectionne = type;
+            const btnMaison = document.getElementById('btnMaison');
+            const btnAppart = document.getElementById('btnAppart');
+
+            if (type === 'Maison') {
+                btnMaison.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10";
+                btnAppart.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700";
+            } else {
+                btnAppart.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10";
+                btnMaison.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700";
+            }
+        }
+
+        // Envoi du formulaire
         document.getElementById('domoForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
             
@@ -145,34 +202,41 @@
             const btnText = document.getElementById('btnText');
             const status = document.getElementById('formStatus');
 
-            // Animation de chargement
             btn.disabled = true;
             btnText.innerText = "Envoi en cours...";
             status.classList.add('hidden');
 
-            // Récupération des données du formulaire
+            // Collecte des appareils cochés
+            const checkboxes = document.querySelectorAll('input[name="appareils"]:checked');
+            let appareilsPossedes = [];
+            checkboxes.forEach((cb) => {
+                appareilsPossedes.push(cb.value);
+            });
+            const listeAppareils = appareilsPossedes.length > 0 ? appareilsPossedes.join(', ') : "Aucun pour le moment";
+
+            // Construction du texte final du message
+            const messageComplet = `Type de logement : ${typeLogementSelectionne}\nAppareils possédés : ${listeAppareils}\n\nProjet : ${document.getElementById('clientMessage').value}`;
+
             const params = {
                 from_name: document.getElementById('clientName').value,
-                reply_to: document.getElementById('clientEmail').value, // L'adresse mail entrée par le client
-                message: document.getElementById('clientMessage').value
+                reply_to: document.getElementById('clientEmail').value,
+                message: messageComplet
             };
 
-            // ⚠️ REMPLACE "YOUR_SERVICE_ID" et "YOUR_TEMPLATE_ID" par tes identifiants EmailJS
             emailjs.send("service_mcwucwj", "template_n83ijmk", params)
                 .then(function() {
-                    // Succès
                     btnText.innerText = "Envoyer ma demande";
                     btn.disabled = false;
                     status.innerText = "Message envoyé avec succès ! Je vous réponds rapidement.";
                     status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
                     document.getElementById('domoForm').reset();
+                    selectLogement('Maison'); // Reset sélecteur graphique
                 }, function(error) {
-                    // Échec
                     btnText.innerText = "Envoyer ma demande";
                     btn.disabled = false;
                     status.innerText = "❌ Une erreur est survenue. Veuillez réessayer.";
                     status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
-                    console.log('Erreur EmailJS:', error);
+                    console.error('Erreur EmailJS:', error);
                 });
         });
     </script>
