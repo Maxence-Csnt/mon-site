@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domotique sur Mesure | Vos Services de Maison Connectée</title>
+    <title>DomotiquePro | Installation & Services de Maison Connectée</title>
     <!-- Tailwind CSS pour un design moderne et rapide -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
@@ -21,7 +21,7 @@
             <div class="space-x-6 text-sm font-medium text-slate-600">
                 <a href="#services" class="hover:text-blue-600 transition">Services</a>
                 <a href="#philosophie" class="hover:text-blue-600 transition">Philosophie</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Devis Gratuit</a>
+                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
             </div>
         </div>
     </nav>
@@ -83,26 +83,50 @@
         </div>
     </section>
 
-<!-- Formulaire de contact configuré pour domotik.m@gmail.com -->
-<form action="https://formsubmit.co/domotik.m@gmail.com" method="POST" class="space-y-6 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
-    
-    <!-- Redirection automatique après l'envoi (optionnel) -->
-    <input type="hidden" name="_next" value="https://domotique.pro.fr">
-    
-    <div>
-        <label class="block text-sm font-medium text-slate-300 mb-2">Nom / Entreprise</label>
-        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-slate-300 mb-2">Votre adresse e-mail (pour vous répondre)</label>
-        <!-- L'attribut name="email" permet à FormSubmit de définir le client comme l'expéditeur de ta réponse -->
-        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-slate-300 mb-2">Votre besoin</label>
-        <textarea name="message" rows="4" required placeholder="Ex: Je souhaite automatiser mes volets roulants et installer Home Assistant..." class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"></textarea>
-    </div>
-    <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-        Envoyer ma demande <i class="fa-solid fa-paper-plane ml-2"></i>
-    </button>
-</form>
+    <!-- 🔒 Section Philosophie -->
+    <section id="philosophie" class="py-20 max-w-4xl mx-auto px-4 text-center space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold">
+            <i class="fa-solid fa-lock"></i>
+            <span>100% Souverain & Privé</span>
+        </div>
+        <h2 class="text-3xl font-bold text-slate-900">Pourquoi travailler avec moi ?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Je privilégie les technologies open-source et les protocoles locaux (Zigbee, Z-Wave). Vos scénarios s'exécutent instantanément, même si votre connexion internet est coupée, et aucune donnée ne quitte votre domicile.
+        </p>
+    </section>
+
+    <!-- 📨 Section Contact Direct -->
+    <section id="contact" class="bg-slate-900 text-white py-20">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="text-center mb-12 space-y-4">
+                <h2 class="text-3xl font-bold">Un projet de maison connectée ?</h2>
+                <p class="text-slate-400">Demandez votre étude personnalisée et recevez une réponse rapidement.</p>
+            </div>
+
+            <!-- Bloc d'action sans intermédiaire (Mailto) -->
+            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl text-center space-y-6">
+                <div class="w-16 h-16 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                
+                <h3 class="text-xl font-bold text-white">Envoyer un e-mail direct</h3>
+                <p class="text-slate-400 text-sm max-w-sm mx-auto">
+                    Cliquez sur le bouton ci-dessous pour m'envoyer directement votre demande depuis votre propre boîte mail (sans aucun intermédiaire).
+                </p>
+
+                <!-- Lien mailto vers ton adresse avec sujet pré-rempli -->
+                <a href="mailto:domotik.m@gmail.com?subject=Demande%20de%20projet%20-%20DomotiquePro&body=Bonjour,%20je%20vous%20contacte%20pour%20un%20projet%20de%20domotique.%20Voici%20mon%20besoin%20:%20" 
+                   class="inline-block w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 text-center cursor-pointer">
+                    Ouvrir ma messagerie et m'écrire <i class="fa-solid fa-paper-plane ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📝 Footer -->
+    <footer class="bg-slate-950 text-slate-500 text-center py-8 text-sm border-t border-slate-900">
+        <p>&copy; 2026 DomotiquePro. Tous droits réservés. Hébergé de manière sécurisée 🚀</p>
+    </footer>
+
+</body>
+</html>
