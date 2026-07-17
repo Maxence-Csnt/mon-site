@@ -3,130 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DomotiquePro | Installation & Services de Maison Connectée</title>
-    <!-- Tailwind CSS pour un design moderne et rapide -->
+    <title>DomotiquePro | Architecture Domotique & Contrôle Local</title>
+    <!-- Tailwind CSS pour le design moderne style Lovable -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans">
+<body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
-    <!-- 🌐 Barre de navigation -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2 text-xl font-bold text-blue-600">
-                <i class="fa-solid fa-house-laptop"></i>
-                <span>DomotiquePro</span>
+    <!-- 🌐 Barre de navigation style Lovable/SaaS -->
+    <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
+                <div class="w-8 h-8 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center text-sm shadow-md shadow-blue-500/10">
+                    <i class="fa-solid fa-house-laptop text-white"></i>
+                </div>
+                <span>domotique<span class="text-blue-500">.pro.fr</span></span>
             </div>
-            <div class="space-x-6 text-sm font-medium text-slate-600">
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#philosophie" class="hover:text-blue-600 transition">Philosophie</a>
-                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
+            <div class="flex items-center space-x-6 text-sm font-medium text-slate-400">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#philosophie" class="hover:text-white transition-colors">Concept</a>
+                <a href="#contact" class="bg-blue-600 text-white px-3.5 py-2 rounded-lg hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 text-xs font-semibold">Lancer mon projet</a>
             </div>
         </div>
     </nav>
 
     <!-- 🏠 Section Héro -->
-    <header class="max-w-6xl mx-auto px-4 py-20 text-center lg:text-left lg:flex lg:items-center lg:justify-between gap-12">
-        <div class="lg:w-1/2 space-y-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-                Reprenez le contrôle de votre maison grâce à la <span class="text-blue-600">domotique</span>
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center relative overflow-hidden">
+        <!-- Effet de lumière en arrière-plan -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
+        
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+            <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
+                <span>✨ Domotique de nouvelle génération</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.15]">
+                Une maison intelligente,<br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 bg-clip-text text-transparent">totalement souveraine.</span>
             </h1>
-            <p class="text-lg text-slate-600 leading-relaxed">
-                Installation, configuration et optimisation de vos systèmes connectés. Des solutions locales, sécurisées et adaptées à votre quotidien, sans dépendre des géants du cloud.
+            <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto font-normal leading-relaxed">
+                Faites installer un écosystème sur mesure, rapide et ultra-sécurisé. Reprenez le contrôle total de vos données, sans dépendre du cloud.
             </p>
             <div class="pt-4">
-                <a href="#contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-blue-500/20 hover:bg-blue-700 hover:shadow-blue-500/30 transition transform hover:-translate-y-0.5">
-                    Discuter de mon projet <i class="fa-solid fa-arrow-right ml-2"></i>
+                <a href="#contact" class="inline-flex items-center justify-center bg-white text-slate-950 px-6 py-3 rounded-xl font-medium text-sm hover:bg-slate-100 transition-all shadow-xl shadow-white/5 hover:-translate-y-0.5 gap-2">
+                    Démarrer l'étude gratuite <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
-        </div>
-        <div class="hidden lg:block lg:w-1/2 bg-blue-100 rounded-3xl p-8 aspect-video flex items-center justify-center text-blue-600 text-8xl shadow-inner">
-            <i class="fa-solid fa-house-signal animate-pulse"></i>
         </div>
     </header>
 
     <!-- 🛠️ Section Services -->
-    <section id="services" class="bg-white py-20 border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <h2 class="text-3xl font-bold text-slate-900">Mes Prestations Domotiques</h2>
-                <p class="text-slate-600">Que vous partiez de zéro ou que vous souhaitiez faire évoluer une installation existante.</p>
+    <section id="services" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
+        <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
+            <h2 class="text-2xl font-bold text-white tracking-tight">Expertises & Intégrations</h2>
+            <p class="text-sm text-slate-400">Des architectures robustes pensées pour durer et évoluer au rythme de vos besoins.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Service 1 -->
+            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 text-base group-hover:bg-blue-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="text-base font-semibold text-white">Serveurs Home Assistant</h3>
+                <p class="text-slate-400 text-xs leading-relaxed font-normal">Déploiement local sur matériel dédié (NUC/Raspberry). Centralisation complète de vos protocoles Zigbee, Z-Wave et IP.</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-100 transition duration-300 space-y-4">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-xl font-bold">
-                        <i class="fa-solid fa-server"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Serveurs Home Assistant</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Configuration complète de votre box domotique locale (Rpi/NUC) pour centraliser tous vos objets connectés sans dépendre d'Internet.</p>
+            <!-- Service 2 -->
+            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 text-base group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
-                <!-- Service 2 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-100 transition duration-300 space-y-4">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Optimisation Énergétique</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Suivi de consommation en temps réel, coupure automatique des appareils en veille et régulation intelligente de votre chauffage.</p>
+                <h3 class="text-base font-semibold text-white">Gestion Énergétique</h3>
+                <p class="text-slate-400 text-xs leading-relaxed font-normal">Suivi de consommation global et par appareil. Automatisation intelligente du chauffage et délestage automatique en temps réel.</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
+                <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 text-base group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-shield-halved"></i>
                 </div>
-                <!-- Service 3 -->
-                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-100 transition duration-300 space-y-4">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl font-bold">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Sécurité & Réseau</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Déploiement de caméras locales, alarmes intelligentes et sécurisation du réseau Wi-Fi/Zigbee pour protéger vos données privées.</p>
-                </div>
+                <h3 class="text-base font-semibold text-white">Sécurité Privée</h3>
+                <p class="text-slate-400 text-xs leading-relaxed font-normal">Vidéosurveillance avec analyse d'image locale IA (Frigate), systèmes d'alarmes autonomes et réseaux Wi-Fi invités étanches.</p>
             </div>
         </div>
     </section>
 
     <!-- 🔒 Section Philosophie -->
-    <section id="philosophie" class="py-20 max-w-4xl mx-auto px-4 text-center space-y-6">
-        <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-semibold">
-            <i class="fa-solid fa-lock"></i>
-            <span>100% Souverain & Privé</span>
+    <section id="philosophie" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900 text-center relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-indigo-600/5 blur-[100px] pointer-events-none rounded-full"></div>
+        <div class="max-w-2xl mx-auto space-y-5 relative z-10">
+            <h2 class="text-2xl font-bold text-white tracking-tight">Le manifeste du Contrôle Local</h2>
+            <p class="text-sm sm:text-base text-slate-400 leading-relaxed font-normal">
+                Aucun abonnement caché. Aucune panne liée à une coupure internet externe. Vos données restent physiques, stockées de manière chiffrée chez vous. C'est l'assurance d'une maison qui réagit instantanément à la milliseconde près.
+            </p>
         </div>
-        <h2 class="text-3xl font-bold text-slate-900">Pourquoi travailler avec moi ?</h2>
-        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Je privilégie les technologies open-source et les protocoles locaux (Zigbee, Z-Wave). Vos scénarios s'exécutent instantanément, même si votre connexion internet est coupée, et aucune donnée ne quitte votre domicile.
-        </p>
     </section>
 
-    <!-- 📨 Section Contact Direct -->
-    <section id="contact" class="bg-slate-900 text-white py-20">
-        <div class="max-w-xl mx-auto px-4">
-            <div class="text-center mb-12 space-y-4">
-                <h2 class="text-3xl font-bold">Un projet de maison connectée ?</h2>
-                <p class="text-slate-400">Demandez votre étude personnalisée et recevez une réponse rapidement.</p>
+    <!-- 📨 Section Formulaire Interactif (Style Lovable Card) -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
+        <div class="max-w-md mx-auto space-y-8">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl font-bold text-white tracking-tight">Configurez votre projet</h2>
+                <p class="text-xs text-slate-400">Décrivez votre besoin ci-dessous pour générer l'e-mail direct.</p>
             </div>
 
-            <!-- Bloc d'action sans intermédiaire (Mailto) -->
-            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl text-center space-y-6">
-                <div class="w-16 h-16 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center text-2xl mx-auto">
-                    <i class="fa-solid fa-envelope-open-text"></i>
+            <!-- Formulaire style Lovable -->
+            <form id="domoForm" class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Nom</label>
+                    <input type="text" id="clientName" placeholder="ex: Jean Dupont" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
-                
-                <h3 class="text-xl font-bold text-white">Envoyer un e-mail direct</h3>
-                <p class="text-slate-400 text-sm max-w-sm mx-auto">
-                    Cliquez sur le bouton ci-dessous pour m'envoyer directement votre demande depuis votre propre boîte mail (sans aucun intermédiaire).
-                </p>
-
-                <!-- Lien mailto vers ton adresse avec sujet pré-rempli -->
-                <a href="mailto:domotik.m@gmail.com?subject=Demande%20de%20projet%20-%20DomotiquePro&body=Bonjour,%20je%20vous%20contacte%20pour%20un%20projet%20de%20domotique.%20Voici%20mon%20besoin%20:%20" 
-                   class="inline-block w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/20 text-center cursor-pointer">
-                    Ouvrir ma messagerie et m'écrire <i class="fa-solid fa-paper-plane ml-2"></i>
-                </a>
-            </div>
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Projet</label>
+                    <textarea id="clientMessage" rows="5" required placeholder="ex: Bonjour, je souhaite centraliser mes volets roulants Somfy et piloter mon chauffage connecté avec une box Home Assistant..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
+                    <span>Générer et envoyer mon e-mail</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- 📝 Footer -->
-    <footer class="bg-slate-950 text-slate-500 text-center py-8 text-sm border-t border-slate-900">
-        <p>&copy; 2026 DomotiquePro. Tous droits réservés. Hébergé de manière sécurisée 🚀</p>
+    <footer class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 DomotiquePro. Tous droits réservés.</p>
+        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Statut : Réseau privé & Sécurisé 🚀</p>
     </footer>
+
+    <!-- ⚙️ Script Mailto Dynamique -->
+    <script>
+        document.getElementById('domoForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const name = document.getElementById('clientName').value;
+            const message = document.getElementById('clientMessage').value;
+            
+            const emailDest = "domotik.m@gmail.com";
+            const subject = encodeURIComponent("[Projet Domotique] Demande de " + name);
+            
+            const body = encodeURIComponent("Bonjour,\n\nVoici les détails de mon projet domotique :\n\n" + message + "\n\nCordialement,\n" + name);
+            
+            // Ouvre la messagerie par défaut de l'utilisateur avec son adresse comme expéditeur
+            window.location.href = "mailto:" + emailDest + "?subject=" + subject + "&body=" + body;
+        });
+    </script>
 
 </body>
 </html>
