@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domotik.M | Domotique & Contrôle Local</title>
+    <title>Domotik.M | Dashboard Admin</title>
     <!-- 🌐 Icône épurée dans l'onglet du navigateur -->
     <link rel="icon" type="image/png" href="logo.png">
-    <!-- Tailwind CSS pour le design moderne style Lovable -->
+    <!-- Tailwind CSS pour le design moderne -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icons FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Script EmailJS officiel v4 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
 
@@ -19,166 +17,56 @@
     <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
         <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
-                <!-- 🎨 Intégration de ton tout nouveau logo -->
                 <div class="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center bg-[#0B0F19]">
                     <img src="favicon.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
                 </div>
-                <span>Domotik<span class="text-blue-500">.M</span></span>
+                <span>Domotik<span class="text-blue-500">.M</span> <span class="text-xs px-2 py-0.5 bg-slate-800 text-slate-400 rounded-md font-normal ml-2">Admin</span></span>
             </div>
             <div class="flex items-center space-x-6 text-sm font-medium text-slate-400">
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#philosophie" class="hover:text-white transition-colors">Concept</a>
-                <a href="#contact" class="bg-blue-600 text-white px-3.5 py-2 rounded-lg hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 text-xs font-semibold">Lancer mon projet</a>
+                <a href="/" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-left text-xs"></i> Voir le site</a>
             </div>
         </div>
     </nav>
 
-    <!-- 🏠 Section Héro -->
-    <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center relative overflow-hidden">
+    <!-- 📨 Section Formulaire Admin -->
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
-        <div class="max-w-3xl mx-auto space-y-6 relative z-10">
-            <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
-                <span>Domotique de nouvelle génération</span>
-            </div>
-            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-                Une maison intelligente,<br>
-                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 bg-clip-text text-transparent">totalement souveraine.</span>
-            </h1>
-            <p class="text-base sm:text-lg text-slate-400 max-w-xl mx-auto font-normal leading-relaxed">
-                Faites installer un écosystème sur mesure, rapide et ultra-sécurisé. Reprenez le contrôle total de vos données, sans dépendre du cloud.
-            </p>
-            <div class="pt-4">
-                <a href="#contact" class="inline-flex items-center justify-center bg-white text-slate-950 px-6 py-3 rounded-xl font-medium text-sm hover:bg-slate-100 transition-all shadow-xl shadow-white/5 hover:-translate-y-0.5 gap-2">
-                    Démarrer l'étude gratuite <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- 🛠️ Section Services -->
-    <section id="services" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
-        <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
-            <h2 class="text-2xl font-bold text-white tracking-tight">Expertises & Intégrations</h2>
-            <p class="text-sm text-slate-400">Des architectures robustes pensées pour durer et évoluer au rythme de vos besoins.</p>
-        </div>
         
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
-                <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 text-base group-hover:bg-blue-500 group-hover:text-white transition-all">
-                    <i class="fa-solid fa-server"></i>
-                </div>
-                <h3 class="text-base font-semibold text-white">Serveurs Home Assistant</h3>
-                <p class="text-slate-400 text-xs leading-relaxed font-normal">Déploiement local sur matériel dédié (Raspberry). Centralisation complète de vos protocoles Zigbee, WiFi et IP.</p>
-            </div>
-            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
-                <div class="w-10 h-10 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 text-base group-hover:bg-indigo-500 group-hover:text-white transition-all">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3 class="text-base font-semibold text-white">Gestion Énergétique</h3>
-                <p class="text-slate-400 text-xs leading-relaxed font-normal">Suivi de consommation global et par appareil. Automatisation intelligente en temps réel.</p>
-            </div>
-            <div class="group p-6 bg-[#111625] rounded-2xl border border-slate-800/60 hover:border-slate-700 transition-all duration-300 space-y-4">
-                <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 text-base group-hover:bg-emerald-500 group-hover:text-white transition-all">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3 class="text-base font-semibold text-white">Sécurité Privée (NON DISPONIBLE)</h3>
-                <p class="text-slate-400 text-xs leading-relaxed font-normal">Vidéosurveillance avec analyse d'image locale IA (Frigate), systèmes d'alarmes autonomes et réseaux Wi-Fi invités étanches.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔒 Section Philosophie -->
-    <section id="philosophie" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900 text-center relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-indigo-600/5 blur-[100px] pointer-events-none rounded-full"></div>
-        <div class="max-w-2xl mx-auto space-y-5 relative z-10">
-            <h2 class="text-2xl font-bold text-white tracking-tight">Le manifeste du Contrôle Local</h2>
-            <p class="text-sm sm:text-base text-slate-400 leading-relaxed font-normal">
-                Aucun abonnement caché. Aucune panne liée à une coupure internet externe. Vos données restent physiques, stockées de manière chiffrée chez vous.
-            </p>
-        </div>
-    </section>
-
-    <!-- 📨 Section Formulaire -->
-    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
-        <div class="max-w-md mx-auto space-y-8">
+        <div class="max-w-md mx-auto space-y-8 relative z-10">
             <div class="text-center space-y-2">
-                <h2 class="text-2xl font-bold text-white tracking-tight">Configurez votre projet</h2>
-                <p class="text-xs text-slate-400">Votre message me sera envoyé directement en tâche de fond.</p>
+                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
+                    <span>Panneau de contrôle</span>
+                </div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Ajouter un nouveau service</h2>
+                <p class="text-xs text-slate-400">Remplissez le formulaire ci-dessous pour étendre vos expertises.</p>
             </div>
 
-            <form id="domoForm" novalidate class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
+            <form id="serviceForm" class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
+                
+                <!-- Nom du service -->
                 <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Prénom et Nom</label>
-                    <input type="text" id="clientName" placeholder="ex: Jean Dupont" class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
-                    <p id="error-clientName" class="text-[11px] text-red-400 hidden mt-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Veuillez renseigner votre prénom et nom.</p>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Nom du service</label>
+                    <input type="text" id="serviceTitle" placeholder="ex: Automatisation d'Éclairage intelligent" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
                 
+                <!-- Icône FontAwesome (Facultatif mais stylé) -->
                 <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Votre Adresse E-mail</label>
-                    <input type="email" id="clientEmail" placeholder="ex: jean.dupont@gmail.com" class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
-                    <p id="error-clientEmail" class="text-[11px] text-red-400 hidden mt-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Veuillez renseigner une adresse e-mail valide.</p>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Classe de l'icône FontAwesome</label>
+                    <input type="text" id="serviceIcon" placeholder="ex: fa-solid fa-lightbulb" class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
                 </div>
 
-                <!-- 🏠 Type de logement -->
+                <!-- Description -->
                 <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Type de logement</label>
-                    <div class="grid grid-cols-2 gap-3">
-                        <button type="button" id="btnMaison" onclick="selectLogement('Maison')" class="px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10">
-                            <i class="fa-solid fa-house mr-2 text-xs"></i> Maison
-                        </button>
-                        <button type="button" id="btnAppart" onclick="selectLogement('Appartement')" class="px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700">
-                            <i class="fa-solid fa-building mr-2 text-xs"></i> Appartement
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 💡 Appareils domotiques possédés (VERSION PURÉE & CENTRÉE) -->
-                <div class="space-y-2.5">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Appareils domotiques possédés</label>
-                    <div class="grid grid-cols-2 gap-2.5 text-xs">
-                        
-                        <!-- Case 1 -->
-                        <label class="relative flex items-center justify-center p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 text-center has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
-                            <input type="checkbox" name="appareils" value="Éclairage" class="sr-only peer">
-                            <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Éclairage connecté / Prise</span>
-                        </label>
-
-                        <!-- Case 2 -->
-                        <label class="relative flex items-center justify-center p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 text-center has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
-                            <input type="checkbox" name="appareils" value="Volets" class="sr-only peer">
-                            <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Volets roulants</span>
-                        </label>
-
-                        <!-- Case 3 -->
-                        <label class="relative flex items-center justify-center p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 text-center has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
-                            <input type="checkbox" name="appareils" value="Chauffage" class="sr-only peer">
-                            <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Thermostat / PAC</span>
-                        </label>
-
-                        <!-- Case 4 -->
-                        <label class="relative flex items-center justify-center p-3.5 rounded-xl bg-[#0B0F19]/40 border border-slate-800/80 cursor-pointer select-none transition-all duration-200 group hover:border-slate-700 text-center has-[:checked]:bg-blue-600/5 has-[:checked]:border-blue-500 has-[:checked]:shadow-lg has-[:checked]:shadow-blue-500/5">
-                            <input type="checkbox" name="appareils" value="Caméras" class="sr-only peer">
-                            <span class="text-slate-400 font-medium group-hover:text-slate-300 peer-checked:text-white transition-colors">Caméras / Alarme</span>
-                        </label>
-
-                    </div>
-                    <!-- Champ Autre -->
-                    <div class="pt-1.5">
-                        <input type="text" id="appareilsAutre" placeholder="Autre(s) appareil(s)..." class="w-full px-4 py-2.5 rounded-xl bg-[#0B0F19] border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 transition-all font-normal">
-                    </div>
-                </div>
-                
-                <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Détails de votre projet</label>
-                    <textarea id="clientMessage" rows="4" placeholder="ex: Bonjour, je souhaite centraliser mes volets et mon chauffage..." class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
-                    <p id="error-clientMessage" class="text-[11px] text-red-400 hidden mt-1"><i class="fa-solid fa-circle-exclamation mr-1"></i> Veuillez décrire brièvement votre projet.</p>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Description du service</label>
+                    <textarea id="serviceDescription" rows="4" placeholder="Décrivez en détail ce que comprend cette prestation..." required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
                 </div>
                 
                 <!-- Zone de notification -->
                 <div id="formStatus" class="text-xs text-center hidden py-2 rounded-xl"></div>
 
+                <!-- Bouton Enregistrer -->
                 <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
-                    <span id="btnText">Envoyer ma demande</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                    <span id="btnText">Enregistrer le service</span> <i class="fa-solid fa-plus text-xs"></i>
                 </button>
             </form>
         </div>
@@ -186,111 +74,56 @@
 
     <!-- 📝 Footer -->
     <footer class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-        <p>&copy; 2026 Domotik.M Tous droits réservés.</p>
-        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Statut : Envoi direct sécurisé 🚀</p>
+        <p>&copy; 2026 Domotik.M Dashboard Administration.</p>
+        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Connecté à l'API Serverless 🚀</p>
     </footer>
 
-    <!-- ⚙️ Script JavaScript & EmailJS -->
+    <!-- ⚙️ Logique JS de liaison avec ton API -->
     <script>
-        emailjs.init({
-          publicKey: "nGU9Kr5gjTAvKzZ0L",
-        });
+        document.getElementById('serviceForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-        let typeLogementSelectionne = "Maison";
-
-        function selectLogement(type) {
-            typeLogementSelectionne = type;
-            const btnMaison = document.getElementById('btnMaison');
-            const btnAppart = document.getElementById('btnAppart');
-
-            if (type === 'Maison') {
-                btnMaison.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10";
-                btnAppart.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700";
-            } else {
-                btnAppart.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-blue-500 text-white text-sm font-medium transition-all cursor-pointer shadow-lg shadow-blue-500/10";
-                btnMaison.className = "px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-slate-400 text-sm font-medium transition-all cursor-pointer hover:border-slate-700";
-            }
-        }
-
-        function validerChamp(id, condition) {
-            const el = document.getElementById(id);
-            const err = document.getElementById('error-' + id);
-            
-            if (condition) {
-                el.classList.remove('border-slate-800', 'focus:border-blue-500', 'focus:ring-blue-500');
-                el.classList.add('border-red-500/80', 'focus:border-red-500', 'focus:ring-red-500');
-                err.classList.remove('hidden');
-                return false;
-            } else {
-                el.classList.remove('border-red-500/80', 'focus:border-red-500', 'focus:ring-red-500');
-                el.classList.add('border-slate-800', 'focus:border-blue-500', 'focus:ring-blue-500');
-                err.classList.add('hidden');
-                return true;
-            }
-        }
-
-        document.getElementById('domoForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            const inputName = document.getElementById('clientName').value.trim();
-            const inputEmail = document.getElementById('clientEmail').value.trim();
-            const inputMessage = document.getElementById('clientMessage').value.trim();
-            
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            const isNameValid = validerChamp('clientName', inputName === "");
-            const isEmailValid = validerChamp('clientEmail', !emailRegex.test(inputEmail));
-            const isMessageValid = validerChamp('clientMessage', inputMessage === "");
-
-            if (!isNameValid || !isEmailValid || !isMessageValid) {
-                return;
-            }
+            const title = document.getElementById('serviceTitle').value.trim();
+            const icon = document.getElementById('serviceIcon').value.trim() || "fa-solid fa-gear";
+            const description = document.getElementById('serviceDescription').value.trim();
 
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
             const status = document.getElementById('formStatus');
 
+            // Animation d'envoi
             btn.disabled = true;
-            btnText.innerText = "Envoi en cours...";
+            btnText.innerText = "Sauvegarde en cours...";
             status.classList.add('hidden');
 
-            const checkboxes = document.querySelectorAll('input[name="appareils"]:checked');
-            let appareilsPossedes = [];
-            checkboxes.forEach((cb) => {
-                appareilsPossedes.push(cb.value);
-            });
-            
-            const autreAppareils = document.getElementById('appareilsAutre').value.trim();
-            if (autreAppareils !== "") {
-                appareilsPossedes.push(autreAppareils);
-            }
-            
-            const listeAppareils = appareilsPossedes.length > 0 ? appareilsPossedes.join(', ') : "Aucun appareil mentionné";
-
-            const params = {
-                from_name: inputName,
-                reply_to: inputEmail,
-                logement: typeLogementSelectionne,
-                appareils: listeAppareils,
-                message: inputMessage
-            };
-
-            emailjs.send("service_mcwucwj", "template_n83ijmk", params)
-                .then(function() {
-                    btnText.innerText = "Envoyer ma demande";
-                    btn.disabled = false;
-                    status.innerText = "Message envoyé avec succès ! Je vous réponds rapidement.";
-                    status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
-                    document.getElementById('domoForm').reset();
-                    selectLogement('Maison'); 
-                }, function(error) {
-                    btnText.innerText = "Envoyer ma demande";
-                    btn.disabled = false;
-                    status.innerText = "Une erreur est survenue. Veuillez réessayer.";
-                    status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
-                    console.error('Erreur EmailJS:', error);
+            try {
+                const response = await fetch('/api/add-service', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, icon, description })
                 });
+
+                if (response.ok) {
+                    status.innerText = "Service enregistré avec succès dans la base ! 📦";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
+                    document.getElementById('serviceForm').reset();
+                } else {
+                    status.innerText = "L'API a renvoyé une erreur lors de l'enregistrement.";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                }
+            } catch (error) {
+                status.innerText = "Impossible de joindre le serveur back-end (/api/add-service).";
+                status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                console.error("Erreur API:", error);
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = "Enregistrer le service";
+            }
         });
+    </script>
+
+</body>
+</html>
     </script>
 
 </body>
