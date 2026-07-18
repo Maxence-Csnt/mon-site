@@ -1,7 +1,11 @@
 {
   "name": "mon-site",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build": "mkdir -p .vercel/output/static && cp -r public/* .vercel/output/static/"
+    "build": "echo 'Pas de build nécessaire, Vercel gère le routage !'"
+  },
+  "dependencies": {
+    "pg": "^8.11.0"
   }
 }
