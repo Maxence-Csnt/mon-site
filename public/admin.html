@@ -1,11 +1,125 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Interface Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domotik.M | Dashboard Admin</title>
+    <!-- 🌐 Icône épurée dans l'onglet du navigateur -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Tailwind CSS pour le design moderne -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Icons FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <h1>Bienvenue sur l'interface Admin</h1>
-    <p>Le fichier fonctionne correctement !</p>
+<body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-blue-500/30">
+
+    <!-- 🌐 Barre de navigation -->
+    <nav class="sticky top-0 z-50 bg-[#0B0F19]/70 backdrop-blur-md border-b border-slate-800/60">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2.5 text-lg font-semibold tracking-tight text-white">
+                <div class="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center bg-[#0B0F19]">
+                    <img src="favicon.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
+                </div>
+                <span>Domotik<span class="text-blue-500">.M</span> <span class="text-xs px-2 py-0.5 bg-slate-800 text-slate-400 rounded-md font-normal ml-2">Admin</span></span>
+            </div>
+            <div class="flex items-center space-x-6 text-sm font-medium text-slate-400">
+                <a href="/" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-left text-xs"></i> Voir le site</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 📨 Section Formulaire Admin -->
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
+        
+        <div class="max-w-md mx-auto space-y-8 relative z-10">
+            <div class="text-center space-y-2">
+                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
+                    <span>Panneau de contrôle</span>
+                </div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Ajouter un nouveau service</h2>
+                <p class="text-xs text-slate-400">Remplissez le formulaire ci-dessous pour étendre vos expertises.</p>
+            </div>
+
+            <form id="serviceForm" class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
+                
+                <!-- Nom du service -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Nom du service</label>
+                    <input type="text" id="serviceTitle" placeholder="ex: Automatisation d'Éclairage intelligent" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
+                </div>
+                
+                <!-- Icône FontAwesome -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Classe de l'icône FontAwesome</label>
+                    <input type="text" id="serviceIcon" placeholder="ex: fa-solid fa-lightbulb" class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
+                </div>
+
+                <!-- Description -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Description du service</label>
+                    <textarea id="serviceDescription" rows="4" placeholder="Décrivez en détail ce que comprend cette prestation..." required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
+                </div>
+                
+                <!-- Zone de notification -->
+                <div id="formStatus" class="text-xs text-center hidden py-2 rounded-xl"></div>
+
+                <!-- Bouton Enregistrer -->
+                <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
+                    <span id="btnText">Enregistrer le service</span> <i class="fa-solid fa-plus text-xs"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 📝 Footer -->
+    <footer class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 Domotik.M Dashboard Administration.</p>
+        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Connecté à l'API Serverless 🚀</p>
+    </footer>
+
+    <!-- ⚙️ Logique JS de liaison avec ton API -->
+    <script>
+        document.getElementById('serviceForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('serviceTitle').value.trim();
+            const icon = document.getElementById('serviceIcon').value.trim() || "fa-solid fa-gear";
+            const description = document.getElementById('serviceDescription').value.trim();
+
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const status = document.getElementById('formStatus');
+
+            btn.disabled = true;
+            btnText.innerText = "Sauvegarde en cours...";
+            status.classList.add('hidden');
+
+            try {
+                const response = await fetch('/api/add-service', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, icon, description })
+                });
+
+                if (response.ok) {
+                    status.innerText = "Service enregistré avec succès dans la base ! 📦";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
+                    document.getElementById('serviceForm').reset();
+                } else {
+                    status.innerText = "L'API a renvoyé une erreur lors de l'enregistrement.";
+                    status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                }
+            } catch (error) {
+                status.innerText = "Impossible de joindre le serveur back-end (/api/add-service).";
+                status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                console.error("Erreur API:", error);
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = "Enregistrer le service";
+            }
+        });
+    </script>
+
 </body>
 </html>
