@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domotik.M | Dashboard Admin</title>
+    <title>Domotik.M | Solutions Domotiques & Sécurité</title>
     <!-- 🌐 Icône épurée dans l'onglet du navigateur -->
     <link rel="icon" type="image/png" href="logo.png">
     <!-- Tailwind CSS pour le design moderne -->
@@ -20,110 +20,91 @@
                 <div class="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center bg-[#0B0F19]">
                     <img src="favicon.png" alt="Domotik.M Logo" class="w-full h-full object-cover">
                 </div>
-                <span>Domotik<span class="text-blue-500">.M</span> <span class="text-xs px-2 py-0.5 bg-slate-800 text-slate-400 rounded-md font-normal ml-2">Admin</span></span>
+                <span>Domotik<span class="text-blue-500">.M</span></span>
             </div>
             <div class="flex items-center space-x-6 text-sm font-medium text-slate-400">
-                <a href="/" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-arrow-left text-xs"></i> Voir le site</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="/admin.html" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition-colors text-xs flex items-center gap-1"><i class="fa-solid fa-lock text-[10px]"></i> Admin</a>
             </div>
         </div>
     </nav>
 
-    <!-- 📨 Section Formulaire Admin -->
-    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
+    <!-- 🚀 Section Héros -->
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-500/10 blur-[130px] pointer-events-none rounded-full"></div>
         
-        <div class="max-w-md mx-auto space-y-8 relative z-10">
-            <div class="text-center space-y-2">
-                <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium tracking-wide">
-                    <span>Panneau de contrôle</span>
-                </div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Ajouter un nouveau service</h2>
-                <p class="text-xs text-slate-400">Remplissez le formulaire ci-dessous pour étendre vos expertises.</p>
+        <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+            <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight leading-[1.15]">
+                L'intelligence au cœur de votre <span class="text-transparent bg-clip-text bg-gradient-to-r coding-st-blue from-blue-400 to-indigo-400">habitat</span>
+            </h1>
+            <p class="text-base text-slate-400 max-w-lg mx-auto font-normal leading-relaxed">
+                Conception, installation et maintenance d'écosystèmes domotiques sur-mesure. Sécurité maximale, confort absolu et économies d'énergie.
+            </p>
+            <div class="pt-4">
+                <a href="#services" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 text-sm">
+                    Découvrir nos expertises <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                </a>
             </div>
+        </div>
+    </header>
 
-            <form id="serviceForm" class="space-y-5 bg-[#111625] p-6 sm:p-8 rounded-2xl border border-slate-800/80 shadow-2xl shadow-black/40">
-                
-                <!-- Nom du service -->
-                <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Nom du service</label>
-                    <input type="text" id="serviceTitle" placeholder="ex: Automatisation d'Éclairage intelligent" required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
-                </div>
-                
-                <!-- Icône FontAwesome (Facultatif mais stylé) -->
-                <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Classe de l'icône FontAwesome</label>
-                    <input type="text" id="serviceIcon" placeholder="ex: fa-solid fa-lightbulb" class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal">
-                </div>
+    <!-- 🛠️ Section Services -->
+    <section id="services" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
+        <div class="space-y-2 mb-12">
+            <h2 class="text-2xl font-bold text-white tracking-tight">Nos Prestations</h2>
+            <p class="text-xs text-slate-500">Des solutions technologiques adaptées à vos exigences quotidiennes.</p>
+        </div>
 
-                <!-- Description -->
-                <div class="space-y-2">
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Description du service</label>
-                    <textarea id="serviceDescription" rows="4" placeholder="Décrivez en détail ce que comprend cette prestation..." required class="w-full px-4 py-3 rounded-xl bg-[#0B0F19] border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-normal resize-none"></textarea>
-                </div>
-                
-                <!-- Zone de notification -->
-                <div id="formStatus" class="text-xs text-center hidden py-2 rounded-xl"></div>
-
-                <!-- Bouton Enregistrer -->
-                <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 flex items-center justify-center gap-2 text-sm cursor-pointer mt-2">
-                    <span id="btnText">Enregistrer le service</span> <i class="fa-solid fa-plus text-xs"></i>
-                </button>
-            </form>
+        <!-- 📦 Conteneur dynamique relié à Neon DB via l'API Vercel -->
+        <div id="services-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <p class="text-xs text-slate-500 col-span-full text-center py-8">Chargement des expertises...</p>
         </div>
     </section>
 
-    <!-- 📝 Footer -->
-    <footer class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-        <p>&copy; 2026 Domotik.M Dashboard Administration.</p>
-        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Connecté à l'API Serverless 🚀</p>
+    <!-- 📝 Pied de page -->
+    <footer class="max-w-5xl mx-auto px-6 py-12 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 Domotik.M. Tous droits réservés.</p>
+        <p class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Statut du système : Opérationnel</p>
     </footer>
 
-    <!-- ⚙️ Logique JS de liaison avec ton API -->
+    <!-- ⚙️ Logique JavaScript d'affichage dynamique -->
     <script>
-        document.getElementById('serviceForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const title = document.getElementById('serviceTitle').value.trim();
-            const icon = document.getElementById('serviceIcon').value.trim() || "fa-solid fa-gear";
-            const description = document.getElementById('serviceDescription').value.trim();
-
-            const btn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            const status = document.getElementById('formStatus');
-
-            // Animation d'envoi
-            btn.disabled = true;
-            btnText.innerText = "Sauvegarde en cours...";
-            status.classList.add('hidden');
+        async function loadServices() {
+            const container = document.getElementById('services-container'); 
+            if (!container) return;
 
             try {
-                const response = await fetch('/api/add-service', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title, icon, description })
-                });
+                const response = await fetch('/api/get-services');
+                if (!response.ok) throw new Error('Erreur lors de la récupération des données');
+                
+                const services = await response.json();
+                container.innerHTML = ''; 
 
-                if (response.ok) {
-                    status.innerText = "Service enregistré avec succès dans la base ! 📦";
-                    status.className = "text-xs text-center py-2 rounded-xl bg-emerald-500/10 text-emerald-400 block";
-                    document.getElementById('serviceForm').reset();
-                } else {
-                    status.innerText = "L'API a renvoyé une erreur lors de l'enregistrement.";
-                    status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
+                if (services.length === 0) {
+                    container.innerHTML = `<p class="text-xs text-slate-500 col-span-full text-center py-8">Aucun service disponible pour le moment.</p>`;
+                    return;
                 }
-            } catch (error) {
-                status.innerText = "Impossible de joindre le serveur back-end (/api/add-service).";
-                status.className = "text-xs text-center py-2 rounded-xl bg-red-500/10 text-red-400 block";
-                console.error("Erreur API:", error);
-            } finally {
-                btn.disabled = false;
-                btnText.innerText = "Enregistrer le service";
-            }
-        });
-    </script>
 
-</body>
-</html>
+                // Génération automatique des cartes de services
+                services.forEach(service => {
+                    container.innerHTML += `
+                        <div class="bg-[#111625] p-6 rounded-2xl border border-slate-800/80 shadow-xl transition-all hover:border-slate-700/80 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-105 transition-transform">
+                                <i class="${service.icon || 'fa-solid fa-gear'}"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2 tracking-tight">${service.title}</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">${service.description}</p>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                container.innerHTML = `<p class="text-xs text-red-400 col-span-full text-center py-8">Impossible d'afficher les services actuels.</p>`;
+                console.error('Erreur au chargement des services:', error);
+            }
+        }
+
+        // Lancement immédiat dès le chargement complet du DOM
+        document.addEventListener('DOMContentLoaded', loadServices);
     </script>
 
 </body>
