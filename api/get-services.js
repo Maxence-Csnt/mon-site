@@ -1,9 +1,10 @@
 import pg from 'pg';
 const { Pool } = pg;
 
+// 🛠️ Configuration compatible à 100% avec Neon et Vercel
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: true
 });
 
 export default async function handler(req, res) {
