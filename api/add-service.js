@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   try {
     const { title, icon, description, password } = req.body;
 
-    // 🔒 Sécurisation : Vérification du mot de passe admin
+    // 🔒 Vérification du mot de passe admin
     if (!password || password !== process.env.ADMIN_PASSWORD) {
       return res.status(401).json({ error: 'Accès refusé : Mot de passe incorrect.' });
     }
@@ -23,6 +23,18 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Le titre et la description sont requis.' });
     }
 
+    // 🏗️ Crée la table automatiquement si elle n'existe pas
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS services (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        icon VARCHAR(255),
+        description TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT NOW()
+      );
+    `);
+
+    // 📨 Insertion du service
     const query = `
       INSERT INTO services (title, icon, description, created_at)
       VALUES ($1, $2, $3, NOW())
